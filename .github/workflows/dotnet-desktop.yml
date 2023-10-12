@@ -71,9 +71,10 @@ jobs:
 
       - name: Push Tag
         run: |
-          tag_name="${{ steps.version.outputs.tag }}"
+          $tag_name="${{ steps.version.outputs.tag }}"
           git tag -a $tag_name -m "Release $tag_name"
           git push origin $tag_name
+
 
       - name: Checkout
         uses: actions/checkout@v3
